@@ -1,5 +1,8 @@
 allprojects {
     repositories {
+        maven(url = "https://mirrors.cloud.tencent.com/maven")
+        maven(url = "https://maven.aliyun.com/nexus/repository/public")
+        mavenCentral()
         google()
         mavenCentral()
     }

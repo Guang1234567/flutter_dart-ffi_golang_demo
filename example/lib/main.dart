@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:native_add/native_add.dart' as native_add;
+//import 'package:native_add/native_add.dart' as native_add;
+import 'package:native_add/native_add_golang.dart' as native_add_golang;
 
 void main() {
   runApp(const MyApp());
@@ -17,12 +18,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late int sumResult;
   late Future<int> sumAsyncResult;
+  late Future<int> divideByZeroAsyncResult;
 
   @override
   void initState() {
     super.initState();
-    sumResult = native_add.sum(1, 2);
-    sumAsyncResult = native_add.sumAsync(3, 4);
+    sumResult = native_add_golang.sum(1, 2, "我是小dartdart");
+    sumAsyncResult = native_add_golang.sumAsync(3, 4, "我是大dartdart");
+    divideByZeroAsyncResult = native_add_golang.divideByZeroAsync();
   }
 
   @override
@@ -47,7 +50,7 @@ class _MyAppState extends State<MyApp> {
                 ),
                 spacerSmall,
                 Text(
-                  'sum(1, 2) = $sumResult',
+                  'sum(1, 2, xxx) = $sumResult',
                   style: textStyle,
                   textAlign: TextAlign.center,
                 ),
@@ -59,6 +62,18 @@ class _MyAppState extends State<MyApp> {
                         (value.hasData) ? value.data : 'loading';
                     return Text(
                       'await sumAsync(3, 4) = $displayValue',
+                      style: textStyle,
+                      textAlign: TextAlign.center,
+                    );
+                  },
+                ),
+                FutureBuilder<int>(
+                  future: divideByZeroAsyncResult,
+                  builder: (BuildContext context, AsyncSnapshot<int> value) {
+                    final displayValue =
+                    (value.hasData) ? value.data : 'loading';
+                    return Text(
+                      'await divideByZeroAsync() = $displayValue',
                       style: textStyle,
                       textAlign: TextAlign.center,
                     );

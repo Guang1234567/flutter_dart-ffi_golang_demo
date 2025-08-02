@@ -23,4 +23,5 @@ plugins {
     id("org.jetbrains.kotlin.android") version "2.1.0" apply false
 }
 
-include(":app")
+include(":app", ":jndcrash")
+project(":jndcrash").projectDir = file("../../../ndcrashdemo/jndcrash")

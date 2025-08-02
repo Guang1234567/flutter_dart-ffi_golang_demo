@@ -17,12 +17,12 @@ preamble: |
 comments:
   style: any
   length: full
-# library-imports:
-#   pkg_ffi: 'package:ffi/ffi.dart'
-# type-map:
-#   'native-types': # Targets native types.
-#     'char':
-#       'lib': 'pkg_ffi' # predefined import.
-#       'c-type': 'Utf8'
-#       'dart-type': 'Utf8'
+library-imports:
+  pkg_ffi: 'package:ffi/ffi.dart'
+type-map:
+  'native-types': # Targets native types.
+    'char':
+      'lib': 'pkg_ffi' # predefined import.
+      'c-type': 'Utf8'
+      'dart-type': 'Utf8'
 

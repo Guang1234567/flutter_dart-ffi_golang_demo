@@ -29,7 +29,7 @@ android {
 
     // Bumping the plugin compileSdk version requires all clients of this plugin
     // to bump the version in their app.
-    compileSdk = 36
+    compileSdk = 35
 
     // Use the NDK version
     // declared in /android/app/build.gradle file of the Flutter project.
@@ -60,5 +60,26 @@ android {
 
     defaultConfig {
         minSdk = 24
+
+        ndk {
+            abiFilters "arm64-v8a"/* , "x86_64" */
+        }
+
+        externalNativeBuild {
+            cmake {
+                // Passes optional arguments to CMake.
+                //arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang"
+                arguments "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON", "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384", "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+
+                // Sets a flag to enable format macro constants for the C compiler.
+                //cFlags "-D__STDC_FORMAT_MACROS"
+
+                // Sets optional flags for the C++ compiler.
+                //cppFlags "-fexceptions", "-frtti"
+
+                // https://developer.android.com/studio/projects/gradle-external-native-builds#pass-args-flags
+                targets "nativeffi"/* , "native_add" */
+            }
+        }
     }
 }

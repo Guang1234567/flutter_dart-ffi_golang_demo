@@ -82,6 +82,8 @@ extern "C" {
 #endif
 
 extern GoInt TestPlus(GoInt a, GoInt b, GoString c);
+extern GoInt TestPlusLongRunning(GoInt a, GoInt b, GoString c);
+extern GoInt TestDivideByZero();
 
 #ifdef __cplusplus
 }
