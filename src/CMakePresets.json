@@ -1,0 +1,151 @@
+{
+    "version": 10,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "preset_cfg_base_android_ndk",
+            "hidden": true,
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "Android",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_SYSTEM_VERSION": "24",
+                "ANDROID_PLATFORM": "android-24",
+                "ANDROID_NDK": "$env{ANDROID_NDK}",
+                "CMAKE_ANDROID_NDK": "$env{ANDROID_NDK}",
+                "CMAKE_TOOLCHAIN_FILE": "$env{ANDROID_NDK}/build/cmake/android.toolchain.cmake",
+                "CMAKE_MAKE_PROGRAM": "$env{ANDROID_HOME}/cmake/3.22.1/bin/ninja",
+                "CMAKE_VERBOSE_MAKEFILE": "ON",
+                "CMAKE_SHARED_LINKER_FLAGS": "-Wl,-z,max-page-size=16384",
+                "ANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES": "ON"
+            }
+        },
+        {
+            "name": "preset_cfg_base_debug",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "preset_cfg_base_release",
+            "hidden": true,
+            "inherits": [
+                "preset_cfg_base_debug"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "preset_cfg_debug_android_arm64-v8a",
+            "inherits": [
+                "preset_cfg_base_debug",
+                "preset_cfg_base_android_ndk"
+            ],
+            "binaryDir": "${sourceParentDir}/android/.cxx/Debug/${presetName}/arm64-v8a",
+            "cacheVariables": {
+                "ANDROID_ABI": "arm64-v8a",
+                "CMAKE_ANDROID_ARCH_ABI": "arm64-v8a",
+                "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Debug/${presetName}/obj/arm64-v8a",
+                "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Debug/${presetName}/obj/arm64-v8a"
+            }
+        },
+        {
+            "name": "preset_cfg_release_android_arm64-v8a",
+            "inherits": [
+                "preset_cfg_base_release",
+                "preset_cfg_base_android_ndk"
+            ],
+            "binaryDir": "${sourceParentDir}/android/.cxx/Release/${presetName}/arm64-v8a",
+            "cacheVariables": {
+                "ANDROID_ABI": "arm64-v8a",
+                "CMAKE_ANDROID_ARCH_ABI": "arm64-v8a",
+                "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Release/${presetName}/obj/arm64-v8a",
+                "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Release/${presetName}/obj/arm64-v8a"
+            }
+        },
+        {
+            "name": "preset_cfg_debug_android_x86_64",
+            "inherits": [
+                "preset_cfg_base_debug",
+                "preset_cfg_base_android_ndk"
+            ],
+            "binaryDir": "${sourceParentDir}/android/.cxx/Debug/${presetName}/x86_64",
+            "cacheVariables": {
+                "ANDROID_ABI": "x86_64",
+                "CMAKE_ANDROID_ARCH_ABI": "x86_64",
+                "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Debug/${presetName}/obj/x86_64",
+                "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Debug/${presetName}/obj/x86_64"
+            }
+        },
+        {
+            "name": "preset_cfg_release_android_x86_64",
+            "inherits": [
+                "preset_cfg_base_release",
+                "preset_cfg_base_android_ndk"
+            ],
+            "binaryDir": "${sourceParentDir}/android/.cxx/Release/${presetName}/x86_64",
+            "cacheVariables": {
+                "ANDROID_ABI": "x86_64",
+                "CMAKE_ANDROID_ARCH_ABI": "x86_64",
+                "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Release/${presetName}/obj/x86_64",
+                "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceParentDir}/android/build/intermediates/cxx/Release/${presetName}/obj/x86_64"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "preset_build_base_android_ndk",
+            "hidden": true,
+            "verbose": true ,
+            "description": "Passes -v to Ninja",
+            "nativeToolOptions": [
+                "-v"
+            ]
+        },
+        {
+            "name": "preset_build_targets",
+            "hidden": true,
+            "targets": [
+                "all",
+                "nativeffi",
+                "native_add"
+            ]
+        },
+        {
+            "name": "preset_build_debug_android_arm64-v8a",
+            "configurePreset": "preset_cfg_debug_android_arm64-v8a",
+            "inherits": [
+                "preset_build_targets",
+                "preset_build_base_android_ndk"
+            ]
+        },
+        {
+            "name": "preset_build_release_android_arm64-v8a",
+            "configurePreset": "preset_cfg_release_android_arm64-v8a",
+            "inherits": [
+                "preset_build_debug_android_arm64-v8a"
+            ]
+        },
+        {
+            "name": "preset_build_debug_android_x86_64",
+            "configurePreset": "preset_cfg_debug_android_x86_64",
+            "inherits": [
+                "preset_build_targets",
+                "preset_build_base_android_ndk"
+            ]
+        },
+        {
+            "name": "preset_build_release_android_x86_64",
+            "configurePreset": "preset_cfg_release_android_x86_64",
+            "inherits": [
+                "preset_build_debug_android_x86_64"
+            ]
+        }
+    ]
+}

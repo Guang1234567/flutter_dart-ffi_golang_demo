@@ -1,0 +1,54 @@
+{
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+
+
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+
+
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++17",
+
+
+    "go.toolsEnvVars": {
+        "CGO_ENABLED": "1",
+        "GOOS": "android",
+        "GOARCH": "arm64",
+        "CC": "${env:ANDROID_NDK_TOOLCHAINS_BIN_DIR}/aarch64-linux-android24-clang",
+        "CXX": "${env:ANDROID_NDK_TOOLCHAINS_BIN_DIR}/aarch64-linux-android24-clang++",
+        "CGO_CFLAGS": "-I${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include -I${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/aarch64-linux-android -I${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/c++/v1",
+        "CGO_LDFLAGS": "-L${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/lib/aarch64-linux-android -L${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/lib/aarch64-linux-android/24"
+    },
+    "go.testEnvVars": {
+        "CGO_ENABLED": "1"
+    },
+    "go.useLanguageServer": true,
+    "go.languageServerFlags": [
+        "-rpc.trace"
+    ],
+    "go.experiments": {
+        "testExplorer": true
+    },
+    "go.trace.server": "verbose",
+
+
+    "cmake.useCMakePresets": "always",
+    "cmake.configureOnOpen": false,
+    "cmake.deleteBuildDirOnCleanConfigure": true,
+    "cmake.clearOutputBeforeBuild": true,
+    "cmake.configureOnEdit": false,
+    "cmake.automaticReconfigure": true,
+    "cmake.cmakePath": "${env:ANDROID_HOME}/cmake/3.22.1/bin/cmake",
+    "cmake.sourceDirectory": [
+        "${workspaceFolder}/src"
+    ],
+}

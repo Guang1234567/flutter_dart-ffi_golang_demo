@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Android_NDK_27.2.12479018",
+        "toolchainFile": "${env:ANDROID_NDK}/build/cmake/android.toolchain.cmake",
+        "compilers": {
+            "CC": "${env:ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+            "CXX": "${env:ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+        },
+        "environmentVariables": {
+            "ANDROID_NDK_ROOT": "${env:ANDROID_NDK}",
+            "ANDROID_NDK_HOME": "${env:ANDROID_NDK}"
+        },
+        "cmakeSettings": {
+            "CMAKE_VERBOSE_MAKEFILE": "ON",
+            "CMAKE_SHARED_LINKER_FLAGS": "-Wl,-z,max-page-size=16384",
+            "ANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES": "ON",
+            "CMAKE_SYSTEM_NAME": "Android",
+            "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+            "CMAKE_SYSTEM_VERSION": "24",
+            "ANDROID_PLATFORM": "android-24",
+            "ANDROID_NDK": "${env:ANDROID_NDK}",
+            "CMAKE_ANDROID_NDK": "${env:ANDROID_NDK}",
+            "CMAKE_TOOLCHAIN_FILE": "${env:ANDROID_NDK}/build/cmake/android.toolchain.cmake",
+            "CMAKE_MAKE_PROGRAM": "${env:ANDROID_HOME}/cmake/3.22.1/bin/ninja",
+            "GNinja": "Ninja"
+        }
+    }
+]

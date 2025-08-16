@@ -1,0 +1,77 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/src/**",
+        "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/c++/v1",
+        "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/aarch64-linux-android",
+        "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include"
+      ],
+      "defines": [
+        "DART_SHARED_LIB"
+      ],
+      "macFrameworkPath": [
+        "/System/Library/Frameworks",
+        "/Library/Frameworks"
+      ],
+      "compilerPath": "${env:ANDROID_NDK_TOOLCHAINS_CC}",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-clang-arm64",
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/c++/v1",
+          "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/aarch64-linux-android",
+          "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+      }
+    },
+    {
+      "name": "Linux",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/c++/v1",
+        "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/aarch64-linux-android",
+        "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include"
+      ],
+      "defines": [
+        "DART_SHARED_LIB"
+      ],
+      "compilerPath": "${env:ANDROID_NDK_TOOLCHAINS_CC}",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-clang-arm64",
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/c++/v1",
+          "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include/aarch64-linux-android",
+          "${env:ANDROID_NDK_TOOLCHAINS_SYSROOT}/usr/include"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+      }
+    },
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "DART_SHARED_LIB",
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.30.30705/bin/Hostx64/x64/cl.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-msvc-x64"
+    }
+  ],
+  "version": 4
+}

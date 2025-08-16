@@ -19,7 +19,7 @@ var logger NativeLogger
 
 // 初始化（可选，根据AndroidLogger是否需要初始化参数）
 func init() {
-	logger = newNativeLogger(true, 2)
+	logger = newNativeLogger(true, DEBUG)
 }
 
 //export TestPlus

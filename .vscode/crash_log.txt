@@ -1,0 +1,53 @@
+Launching lib/main.dart on LE2120 (wireless) in debug mode...
+Running Gradle task 'assembleDebug'...
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...
+D/FlutterJNI(25839): Beginning load of flutter...
+D/FlutterJNI(25839): flutter (null) was loaded normally!
+I/flutter (25839): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Debug service listening on ws://127.0.0.1:62828/WYGyMz22hRI=/ws
+Syncing files to device LE2120 (wireless)...
+I/ive_add_exampl(25839): ProcessProfilingInfo new_methods=1488 is saved saved_to_disk=1 resolve_classes_delay=5000
+E/Go      (25839): panic: runtime error: integer divide by zero
+E/NDCRASH (25839): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+E/NDCRASH (25839): Build fingerprint: OnePlus/OnePlus9Pro_CH/OnePlus9Pro:11/RKQ1.201105.002/1638246235130:user/release-keys
+E/NDCRASH (25839): Revision: '0'
+E/NDCRASH (25839): ABI: 'arm64'
+E/NDCRASH (25839): pid: 25839, tid: 25839, name: ive_add_example  >>> com.example.native_add_example <<<
+E/NDCRASH (25839): signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+E/NDCRASH (25839):     x0   0000000000000000  x1   00000000000064ef  x2   0000000000000006  x3   0000000000000008
+E/NDCRASH (25839):     x4   0000000000000001  x5   0000000000000002  x6   0000000000000000  x7   0000000000000000
+E/NDCRASH (25839):     x8   0000000000000083  x9   000000000000002d  x10  0000000000000000  x11  0000007093710030
+E/NDCRASH (25839):     x12  00000000002471e4  x13  0000001b5203b3e7  x14  001d6cfb049692f5  x15  0000000034155555
+E/NDCRASH (25839):     x16  0000007fc92963a0  x17  0000001b52023b1c  x18  000000709369e000  x19  00000000000064ef
+E/NDCRASH (25839):     x20  0000007fc9a8e0c0  x21  0000004000048008  x22  0000000000000001  x23  0000006f98db649c
+E/NDCRASH (25839):     x24  0000006e00008081  x25  0000007fc92b5000  x26  0000000000000000  x27  0000000000000010
+E/NDCRASH (25839):     x28  0000004000002700  x29  0000004000056c78  x30  0000006f72ce0d30
+E/NDCRASH (25839):     sp   0000004000056c80  pc   0000006f72d02118  pstate 0000000080001000
+E/NDCRASH (25839):  
+E/NDCRASH (25839): backtrace:
+E/NDCRASH (25839):     #00 pc 00000000000c0118  /data/app/~~HZWEIRhMPKlE7Ve1HTYDzw==/com.example.native_add_example-jSshUOHst5_Gk2mG_3-6RQ==/base.apk!libnativeffi.so (offset 0x34f8000) (BuildId: 11376752ac60346a1ff787c90af4438d6a2e2099)
+E/NDCRASH (25839):     #01 pc 000000000009ed2c  /data/app/~~HZWEIRhMPKlE7Ve1HTYDzw==/com.example.native_add_example-jSshUOHst5_Gk2mG_3-6RQ==/base.apk
+E/NDCRASH (25839):  
+F/libc    (25839): Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 25839 (ive_add_example), pid 25839 (ive_add_example)
+Process name is com.example.native_add_example, not key_process
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'OnePlus/OnePlus9Pro_CH/OnePlus9Pro:11/RKQ1.201105.002/1638246235130:user/release-keys'
+Revision: '0'
+ABI: 'arm64'
+Timestamp: 2025-08-11 10:38:33+0800
+pid: 25839, tid: 25839, name: ive_add_example  >>> com.example.native_add_example <<<
+uid: 10618
+signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+    x0  0000000000000000  x1  00000000000064ef  x2  0000000000000006  x3  0000000000000008
+    x4  0000000000000001  x5  0000000000000002  x6  0000000000000000  x7  0000000000000000
+    x8  0000000000000083  x9  000000000000002d  x10 0000000000000000  x11 0000007093710030
+    x12 00000000002471e4  x13 0000001b5203b3e7  x14 001d6cfb049692f5  x15 0000000034155555
+    x16 0000007fc92963a0  x17 0000001b52023b1c  x18 000000709369e000  x19 00000000000064ef
+    x20 0000007fc9a8e0c0  x21 0000004000048008  x22 0000000000000001  x23 0000006f98db649c
+    x24 0000006e00008081  x25 0000007fc92b5000  x26 0000000000000000  x27 0000000000000010
+    x28 0000004000002700  x29 0000004000056c78
+    lr  0000006f72ce0d30  sp  0000004000056c80  pc  0000006f72d02118  pst 0000000080001000
+backtrace:
+      #00 pc 00000000000c0118  /data/app/~~HZWEIRhMPKlE7Ve1HTYDzw==/com.example.native_add_example-jSshUOHst5_Gk2mG_3-6RQ==/base.apk!libnativeffi.so (offset 0x34f8000) (BuildId: 11376752ac60346a1ff787c90af4438d6a2e2099)
+Lost connection to device.

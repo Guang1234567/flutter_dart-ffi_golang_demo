@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dart-code.dart-code",
+    "dart-code.flutter",
+    "golang.go",
+    "mkhl.direnv",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpptools",
+  ],
+  "unwantedRecommendations": []
+}

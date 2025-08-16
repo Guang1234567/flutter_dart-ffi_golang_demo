@@ -34,7 +34,7 @@ DART_BINDING_FILE := ../lib/native_add_golang_bindings_generated.dart
 
 # 默认目标
 .PHONY: all
-all: $(DART_BINDING_FILE)
+all: $(TARGET) $(DART_BINDING_FILE)
 
 $(DART_BINDING_FILE): $(LOCAL_HEADER)
 	@echo "生成 dart-go binding 文件..."
@@ -51,15 +51,5 @@ $(TARGET) $(HEADER): $(SRCS)
 	@echo "正在编译 Go 共享库..."
 	go build -o "$(BUILDDIR)/${SONAME}" -buildmode c-shared -a -v
 	@echo "编译完成: $(TARGET) 和 $(HEADER)"
-
-# 清理生成的文件
-.PHONY: clean
-clean:
-	rm -f $(TARGET)
-	rm -f $(HEADER)
-	rm -f ./$(BASE_SONAME).h
-	rm -f ./$(BASE_SONAME).so
-	rm -f ../lib/native_add_golang_bindings_generated.dart
-	@echo "清理完成"
 
 .DELETE_ON_ERROR:

@@ -1,0 +1,57 @@
+{
+  "buildType": {
+    "default": "debug",
+    "choices": {
+      "debug": {
+        "short": "Debug",
+        "long": "Emit debug information",
+        "buildType": "Debug",
+        "settings": {
+          "CMAKE_BUILD_TYPE": "Debug"
+        }
+      },
+      "release": {
+        "short": "Release",
+        "long": "Optimize generated code",
+        "buildType": "Release",
+        "settings": {
+          "CMAKE_BUILD_TYPE": "Release"
+        }
+      }
+    }
+  },
+  "targetTriple": {
+    "default": "android-arm64-v8a",
+    "choices": {
+      "android-arm64-v8a": {
+        "short": "android-arm64-v8a",
+        "long": "android-arm64-v8a",
+        "settings": {
+          "ANDROID_ABI": "arm64-v8a",
+          "CMAKE_ANDROID_ARCH_ABI": "arm64-v8a",
+          "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${workspaceFolder}/build/intermediates/cxx/Debug/by_vscode/obj/arm64-v8a",
+          "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${workspaceFolder}/build/intermediates/cxx/Debug/by_vscode/obj/arm64-v8a",
+          "B": "${workspaceFolder}/build/.cxx/Debug/by_vscode/arm64-v8a"
+        }
+      },
+      "android-x86_64": {
+        "short": "android-x86_64",
+        "long": "android-x86_64",
+        "settings": {
+          "ANDROID_ABI": "x86_64",
+          "CMAKE_ANDROID_ARCH_ABI": "x86_64",
+          "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${workspaceFolder}/build/intermediates/cxx/Debug/by_vscode/obj/x86_64",
+          "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${workspaceFolder}/build/intermediates/cxx/Debug/by_vscode/obj/x86_64",
+          "B": "${workspaceFolder}/build/.cxx/Debug/by_vscode/x86_64"
+        }
+      },
+      "ios-arm64-v8a": {
+        "short": "ios",
+        "long": "ios",
+        "settings": {
+          "GNinja": "Ninja"
+        }
+      }
+    }
+  }
+}
